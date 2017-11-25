@@ -1,0 +1,26 @@
+<h1>Listing Articles</h1>
+<%= link_to 'New article', new_admin_manga_path %>
+
+<table class="article_list">
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Created at<th/>
+      <th>Path</th>
+      <th>Operate</th>
+      <th></th>
+      <th></th>
+    </tr>
+    <% @mangas.each do |manga| %>
+        <tr>
+          <td><%= manga.id %></td>
+          <td><%= manga.title %></td>
+          <td><%= manga.created_at.to_s(:created_at) %><td/>
+          <td><%= manga.path %></td>
+          <td><%= link_to 'Show', admin_manga_path(manga) %></td>
+          <td><%= link_to 'Edit', edit_admin_manga_path(manga) %></td>
+          <td><%= link_to 'Destroy', admin_manga_path(manga),
+                          method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+    <% end %>
+</table>
