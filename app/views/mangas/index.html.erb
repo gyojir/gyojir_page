@@ -1,23 +1,11 @@
 <h1>Listing Articles</h1>
-<%= link_to 'New article', new_manga_path %>
 
 <% @mangas.each do |manga| %>
-  <!-- <h1><%= manga.title %><br/></h1>
+  <h1><%= link_to manga.title, manga_path(manga) %></h1>
   <%= manga.created_at %><br/>
   <%= manga.path %><br/>
-  <%= image_tag manga.path %><br/>
+  <%= image_tag manga.path, width: "300" %><br/>
   <%= manga.comment %><br/>
-  <br/> -->
+  <br/>
 
-  <table>
-    <tr>
-      <td><%= manga.title %></td>
-      <td><%= manga.created_at %><td/>
-      <td><%= manga.path %></td>
-      <td><%= link_to 'Show', manga_path(manga) %></td>
-      <td><%= link_to 'Edit', edit_manga_path(manga) %></td>
-      <td><%= link_to 'Destroy', manga_path(manga),
-                      method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  </table>
 <% end %>

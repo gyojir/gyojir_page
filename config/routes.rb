@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  get '/logout', to: 'mangas#logout'
-  resources :mangas do
-    resources :tags
+  resources :mangas
+
+  namespace :admin do
+    resources :mangas do
+      resources :tags
+    end
   end
 end
