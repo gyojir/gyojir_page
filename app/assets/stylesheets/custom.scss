@@ -1,0 +1,21 @@
+table.article_list {
+	border-collapse: collapse;
+	text-align: left;
+	line-height: 1.5;
+
+	th {
+		padding: 10px;
+		font-weight: bold;
+		vertical-align: top;
+		border-bottom: 3px solid #036;
+	}
+	td {
+		padding: 10px;
+		font-weight: bold;
+		vertical-align: top;
+		border-bottom: 1px solid #ccc;
+	}
+	tr:nth-child(odd) td {
+		background: #f2f2f2;
+	}
+}
