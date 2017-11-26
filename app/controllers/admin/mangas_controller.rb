@@ -5,13 +5,13 @@ class Admin::MangasController < Admin::Base
 
   def new
     @manga = Manga.new
+    @manga.tags.build
   end
 
   def create
     # binding.pry
 
-    @manga = Manga.new
-    @manga.title = params[:manga][:title]
+    @manga = Manga.new(manga_params)
     if !params[:manga][:image].nil?
       @manga.path = '/images/' + params[:manga][:image].original_filename
       File.open('./public' + @manga.path, 'wb') do |f|
@@ -20,7 +20,6 @@ class Admin::MangasController < Admin::Base
     end
     @manga.good = 0
     @manga.bad = 0
-    @manga.comment = params[:manga][:comment]
 
     if @manga.save
       redirect_to manga_path(@manga)
@@ -44,7 +43,8 @@ class Admin::MangasController < Admin::Base
       end
     end
 
-    if @manga.update(params.require(:manga).permit(:title, :comment))
+
+    if @manga.update(manga_params)
       redirect_to manga_path(@manga)
     else
       render 'edit'
@@ -60,5 +60,9 @@ class Admin::MangasController < Admin::Base
     @manga.destroy
 
     redirect_to admin_mangas_path
+  end
+
+  def manga_params
+    params.require(:manga).permit(:title, :comment, tags_attributes: [:id, :name, :_destroy])
   end
 end

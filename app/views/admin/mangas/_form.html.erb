@@ -24,8 +24,23 @@
 
   <p>
     <%= f.label :comment %><br>
-    <%= f.text_field :comment %>
+    <%= f.text_area :comment %>
   </p>
+
+  <h2>Add a tags:</h2>
+  <table>
+    <tbody>
+      <tr>
+       <th>タグ</th>
+       <th>Action</th>
+      </tr>
+      <%= f.nested_fields_for :tags, wrapper_tag: :tr do |q| %>
+        <td><%= q.text_field :name %></td>
+        <td><%= q.remove_nested_fields_link 'Delete', role: 'button' %></td>
+      <% end %>
+    </tbody>
+  </table>
+  <%= f.add_nested_fields_link :tags, 'Add new', role: 'button' %>
 
   <p>
     <%= f.submit %>
