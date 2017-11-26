@@ -7,6 +7,12 @@ crumb :about do
 
   parent :root
 end
+crumb :contact do
+  link "Contact", contact_path
+
+  parent :root
+end
+
 
 crumb :mangas do
   link "漫画", mangas_path
