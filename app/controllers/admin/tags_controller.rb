@@ -9,7 +9,7 @@ class Admin::TagsController < Admin::Base
     @manga = Manga.find(params[:manga_id])
     @tag = @manga.tags.find(params[:id])
     @tag.destroy
-    redirect_to admin_manga_path(@manga)
+    redirect_to manga_path(@manga)
   end
 
   private
