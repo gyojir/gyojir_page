@@ -2,16 +2,4 @@
 
 <%= render 'form' %>
 
-<h2>Add a tags:</h2>
-<!-- admin/mangas/#id/tags  -->
-<%= form_for([:admin, @manga, @manga.tags.build]) do |f| %>
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
-
 <%= link_to 'Back', admin_mangas_path %>
