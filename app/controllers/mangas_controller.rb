@@ -1,6 +1,7 @@
 class MangasController < ApplicationController
   def index
-    @mangas = Manga.all
+    @mangas = Manga.paginate(page: params[:page])
+    #@mangas = Manga.all
   end
 
   def show

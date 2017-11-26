@@ -1,6 +1,8 @@
+require 'will_paginate/array'
 class Admin::MangasController < Admin::Base
   def index
-    @mangas = Manga.all
+    @mangas = Manga.paginate(page: params[:page])
+    #@mangas = Manga.all
   end
 
   def new
