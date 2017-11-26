@@ -34,8 +34,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'nested_form_fields'
 gem 'jquery-rails'
 
-
-gem 'pg', group: :production
+group :production do
+ gem 'pg'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
