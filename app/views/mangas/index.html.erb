@@ -3,8 +3,11 @@
 <% @mangas.each do |manga| %>
   <h1><%= link_to manga.title, manga_path(manga) %></h1>
   <%= manga.created_at.to_date.to_s %><br/>
-  <%= manga.path %><br/>
-  <%= image_tag manga.path, width: "300" %><br/>
+
+  <% if manga.image? %>
+    <%= image_tag manga.image.url, class: 'thumbnail' %><br/>
+  <% end %>
+
   <%= manga.comment %><br/>
   <br/>
 

@@ -34,6 +34,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'nested_form_fields'
 gem 'jquery-rails'
 
+# Image Uploader
+gem 'carrierwave'
+#gem 'rmagick', require: 'RMagick'
+
 group :production do
  gem 'pg'
 end
