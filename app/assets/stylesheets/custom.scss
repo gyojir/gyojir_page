@@ -23,22 +23,3 @@ table.article_list {
 img.thumbnail {
 	width: 200px;
 }
-
-/* パンくずリストのスタイル */
-ol.breadcrumbs {
-	margin: 0; /* マージン（上下左右） */
-	padding: 5px; /* パディング（上下、左右） */
-	list-style-type: none; /* リストマーク非表示 */
-	font-size: 100%; /* 文字サイズ */
-
-
-	/* リスト項目 */
-	li {
-		display: inline; /* 項目を横並び */
-
-		/* リンクエリア */
-		a {
-			padding-right: 5px; /* 右パディング */
-		}
-	}
-}
