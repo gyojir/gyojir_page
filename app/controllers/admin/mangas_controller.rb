@@ -29,10 +29,6 @@ class Admin::MangasController < Admin::Base
     end
   end
 
-  def show
-    @manga = Manga.find(params[:id])
-  end
-
   def edit
     @manga = Manga.find(params[:id])
   end

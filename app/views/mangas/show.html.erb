@@ -1,12 +1,12 @@
 <h1><%= @manga.title %></h1>
-<%= @manga.created_at %><br/>
+<%= @manga.created_at.to_s(:created_at) %>&emsp;
 
 tags:&nbsp;
 <% @manga.tags.each do |tag| %>
-    <%= tag.name %> &nbsp;
+    <%= tag.name %>&nbsp;
 <% end %>
 <br/>
 
 <%= @manga.path %><br/>
-<%= image_tag @manga.path %><br/>
+<%= image_tag @manga.path, width: "300" %><br/>
 <%= @manga.comment %><br/>

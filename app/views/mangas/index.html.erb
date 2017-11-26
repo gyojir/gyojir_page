@@ -2,7 +2,7 @@
 
 <% @mangas.each do |manga| %>
   <h1><%= link_to manga.title, manga_path(manga) %></h1>
-  <%= manga.created_at %><br/>
+  <%= manga.created_at.to_s(:created_at) %><br/>
   <%= manga.path %><br/>
   <%= image_tag manga.path, width: "300" %><br/>
   <%= manga.comment %><br/>
