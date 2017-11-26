@@ -18,8 +18,20 @@
   </p>
 
   <p>
+    <% if @manga.image? %>
+          <%= image_tag @manga.image.url, class: 'thumbnail' %>
+    <% end %>
+    <br>
     <%= f.label :image %><br>
     <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
+    <!-- 既存レコード(DBに保存されている)かつ、画像が存在する場合 -->
+    <% if @manga.persisted? && @manga.image? %>
+      <label>
+        <%= f.check_box :remove_image %>
+        画像を削除
+      </label>
+    <% end %>
   </p>
 
   <p>

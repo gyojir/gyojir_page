@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171124174135) do
+ActiveRecord::Schema.define(version: 20171126115658) do
 
   create_table "mangas", force: :cascade do |t|
     t.string "title"
-    t.string "path"
     t.integer "good"
     t.integer "bad"
     t.string "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
   end
 
   create_table "tags", force: :cascade do |t|
