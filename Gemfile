@@ -43,6 +43,8 @@ gem 'mini_magick'
 # breadcrumbs list
 gem 'gretel'
 
+gem 'will_paginate', '~> 3.1.0'
+
 group :production do
   gem 'cloudinary'
   gem 'pg'
