@@ -7,6 +7,7 @@ tags:&nbsp;
 <% end %>
 <br/>
 
-<%= @manga.path %><br/>
-<%= image_tag @manga.path, width: "300" %><br/>
+<% if @manga.image? %>
+  <%= image_tag @manga.image.url, class: 'thumbnail' %><br/>
+<% end %>
 <%= @manga.comment %><br/>
