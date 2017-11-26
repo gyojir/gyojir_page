@@ -36,10 +36,13 @@ gem 'jquery-rails'
 
 # Image Uploader
 gem 'carrierwave'
+#gem 'carrierwave-dropbox'
+gem 'mini_magick'
 #gem 'rmagick', require: 'RMagick'
 
 group :production do
- gem 'pg'
+  gem 'cloudinary'
+  gem 'pg'
 end
 
 group :development, :test do
