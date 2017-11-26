@@ -40,6 +40,9 @@ gem 'carrierwave'
 gem 'mini_magick'
 #gem 'rmagick', require: 'RMagick'
 
+# breadcrumbs list
+gem 'gretel'
+
 group :production do
   gem 'cloudinary'
   gem 'pg'
