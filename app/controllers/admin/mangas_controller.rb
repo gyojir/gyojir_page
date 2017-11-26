@@ -23,7 +23,7 @@ class Admin::MangasController < Admin::Base
     @manga.comment = params[:manga][:comment]
 
     if @manga.save
-      redirect_to admin_manga_path(@manga)
+      redirect_to manga_path(@manga)
     else
       render 'new'
     end
@@ -45,7 +45,7 @@ class Admin::MangasController < Admin::Base
     end
 
     if @manga.update(params.require(:manga).permit(:title, :comment))
-      redirect_to admin_manga_path(@manga)
+      redirect_to manga_path(@manga)
     else
       render 'edit'
     end
