@@ -1,4 +1,11 @@
-<h1>Listing Articles</h1>
+<% provide(:title, "Manga") %>
+
+<ol class="breadcrumbs">
+	<li><%= link_to 'Home', root_path %></li>&gt;
+	<li>漫画</li>
+</ol>
+
+<h1>漫画</h1>
 
 <% @mangas.each do |manga| %>
   <h1><%= link_to manga.title, manga_path(manga) %></h1>
