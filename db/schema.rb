@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171126115658) do
+ActiveRecord::Schema.define(version: 20171127115613) do
 
   create_table "mangas", force: :cascade do |t|
     t.string "title"
-    t.integer "good"
-    t.integer "bad"
+    t.integer "good", default: 0, null: false
+    t.integer "bad", default: 0, null: false
     t.string "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -28,6 +28,22 @@ ActiveRecord::Schema.define(version: 20171126115658) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["manga_id"], name: "index_tags_on_manga_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "ip_address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "manga_id"
+    t.integer "vote_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["manga_id"], name: "index_votes_on_manga_id"
+    t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
 end

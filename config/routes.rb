@@ -3,7 +3,14 @@ Rails.application.routes.draw do
   get '/about', to: 'static_pages#about'
   get '/contact', to: 'static_pages#contact'
 
-  resources :mangas
+  resources :mangas do
+    resources :votes, only: [:create, :destroy] do
+      collection do
+        post :good
+        post :bad
+      end
+    end
+  end
 
   namespace :admin do
     resources :mangas do

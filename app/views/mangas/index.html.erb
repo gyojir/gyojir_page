@@ -6,12 +6,6 @@
 
 <%= form_tag({action: :index}, {:method=>"get"}) do %>
   <%= select_tag :order, options_for_select(::Manga::ORDERS.keys, selected: params[:order]) %>
-  <% if false %>
-  <!-- <%= collection_select :order, :order.to_s, Order.all, :name, :name,  selected: @order.name %> -->
-  <!-- <%= select_tag :order_by, options_for_select(['新しい順', '古い順']) %> -->
-  <!-- @keywordは初期値 -->
-  <!-- <%= text_field_tag :keyword, @keyword%> -->
-  <% end %>
   <%= submit_tag "検索", name: nil%>
 <% end %>
 
@@ -27,6 +21,11 @@
   <% end %>
 
   <%= manga.comment %><br/>
+
+  <div class="like-buttons-<%= manga.id %>" style="display:inline-flex">
+    <%= render partial: 'votes/vote', locals: { manga: manga }  %>
+  </div>
+
   <br/>
 
 <% end %>
