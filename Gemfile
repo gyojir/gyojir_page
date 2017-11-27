@@ -45,6 +45,8 @@ gem 'gretel'
 
 gem 'will_paginate', '~> 3.1.0'
 
+gem 'counter_culture'
+
 group :production do
   gem 'cloudinary'
   gem 'pg'
