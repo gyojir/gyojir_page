@@ -1,7 +1,7 @@
 class MangasController < ApplicationController
   def index
-    @order = Order.find_by(name: params[:order].nil? ? "古い順" : params[:order][:order])
-    @mangas = Manga.order(@order.expression)
+    params[:order] ||= "新しい順"
+    @mangas = Manga.order(::Manga::ORDERS[params[:order]])
     @mangas = @mangas.paginate(page: params[:page])
     #@mangas = Manga.all
   end
