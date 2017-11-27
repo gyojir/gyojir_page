@@ -6,10 +6,7 @@
 <%= @manga.created_at.to_date.to_s %>&emsp;
 
 tags:&nbsp;
-<% @manga.tags.each do |tag| %>
-    <%= tag.name %>&nbsp;
-<% end %>
-<br/>
+<%= @manga.tags.map{|tag| tag.name}.join(", ") %><br/>
 
 <% if @manga.image? %>
   <%= image_tag @manga.image.url, class: 'thumbnail' %><br/>
