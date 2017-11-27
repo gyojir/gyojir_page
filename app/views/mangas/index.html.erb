@@ -1,12 +1,23 @@
-<% provide(:title, "Manga") %>
+<% provide(:title, "漫画") %>
 
 <% breadcrumb :mangas %>
 
 <h1>漫画</h1>
 
+<%= form_tag({action: :index}, {:method=>"get"}) do |f|%>
+  <%= collection_select :order, :order.to_s, Order.all, :name, :name,  selected: @order.name %>
+  <!-- <%= select_tag :order_by, options_for_select(['新しい順', '古い順']) %> -->
+  <!-- @keywordは初期値 -->
+  <!-- <%= text_field_tag :keyword, @keyword%> -->
+  <%= submit_tag "検索", name: nil%>
+<% end %>
+
 <% @mangas.each do |manga| %>
   <h1><%= link_to manga.title, manga_path(manga) %></h1>
-  <%= manga.created_at.to_date.to_s %><br/>
+  <%= manga.created_at.to_date.to_s %>&emsp;
+
+  tags:&nbsp;
+  <%= manga.tags.map{|tag| tag.name}.join(", ") %><br/>
 
   <% if manga.image? %>
     <%= image_tag manga.image.url, class: 'thumbnail' %><br/>
