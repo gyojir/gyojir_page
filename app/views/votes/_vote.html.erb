@@ -1,0 +1,33 @@
+<% good = "good: #{manga.good}" %>
+<% bad = "bad: #{manga.bad}" %>
+<% vote = manga.vote_user(current_user.id) %>
+
+<% if vote && vote.vote_type == 1 %>
+  <%= button_to manga_vote_path(manga, Vote.find_by(user_id: current_user.id, manga_id: manga.id)), method: :delete,
+        remote: true, data: { disable_with: good} do %>
+    <span>
+      <%= good %>
+    </span>
+  <% end %>
+<% else %>
+  <%= button_to good_manga_votes_path(manga), remote: true, data: { disable_with: good } do %>
+    <span>
+      <%= good %>
+    </span>
+  <% end %>
+<% end %>
+
+<% if vote && vote.vote_type == 2 %>
+  <%= button_to manga_vote_path(manga, Vote.find_by(user_id: current_user.id, manga_id: manga.id)), method: :delete,
+        remote: true, data: { disable_with: bad} do %>
+    <span>
+      <%= bad %>
+    </span>
+  <% end %>
+<% else %>
+  <%= button_to bad_manga_votes_path(manga), remote: true, data: { disable_with: bad } do %>
+    <span>
+      <%= bad %>
+    </span>
+  <% end %>
+<% end %>
