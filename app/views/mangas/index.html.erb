@@ -1,5 +1,4 @@
 <% provide(:title, "漫画") %>
-
 <% breadcrumb :mangas %>
 
 <h1>漫画</h1>
@@ -9,25 +8,28 @@
   <%= submit_tag "検索", name: nil%>
 <% end %>
 
+
 <% @mangas.each do |manga| %>
-  <h1><%= link_to manga.title, manga_path(manga) %></h1>
-  <%= manga.created_at.to_date.to_s %>&emsp;
+  <article>
 
-  tags:&nbsp;
-  <%= manga.tags.map{|tag| tag.name}.join(", ") %><br/>
+    <h1><%= link_to manga.title, manga_path(manga) %></h1>
+    <p>
+      <%= manga.created_at.to_date.to_s %>
+      &emsp;tags:&nbsp;
+      <%= manga.tags.map{|tag| tag.name}.join(", ") %>
+    </p>
 
-  <% if manga.image? %>
-    <%= image_tag manga.image.url, class: 'thumbnail' %><br/>
-  <% end %>
+    <% if manga.image? %>
+      <%= image_tag manga.image.url, class: 'thumbnail' %><br/>
+    <% end %>
 
-  <%= manga.comment %><br/>
+    <p><%= manga.comment %></p>
 
-  <div class="like-buttons-<%= manga.id %>" style="display:inline-flex">
-    <%= render partial: 'votes/vote', locals: { manga: manga }  %>
-  </div>
+    <div class="like-buttons-<%= manga.id %>" style="display:inline-flex">
+      <%= render partial: 'votes/vote', locals: { manga: manga }  %>
+    </div>
 
-  <br/>
-
+  </article>
 <% end %>
 
 <%= will_paginate @mangas %>

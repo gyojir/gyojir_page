@@ -31,7 +31,7 @@ class Admin::MangasController < Admin::Base
   def update
     @manga = Manga.find(params[:id])
     if @manga.update(manga_params)
-      redirect_to manga_path(@manga)
+      redirect_to admin_mangas_path
     else
       render 'edit'
     end

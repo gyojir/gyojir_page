@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    get '/', to: 'mangas#index'
     resources :mangas do
       resources :tags
     end
