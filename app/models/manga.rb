@@ -7,7 +7,11 @@ class Manga < ApplicationRecord
 
   ORDERS = {
     '新しい順' => 'created_at desc',
-    '古い順' => 'created_at asc'
+    '古い順' => 'created_at asc',
+    '面白い順' => 'good desc',
+    '面白くない順' => 'good asc',
+    'つまらない順' => 'bad desc',
+    'つまらなくない順' => 'bad asc',
   }
 
   # user_idが漫画に対して既にしているvote
