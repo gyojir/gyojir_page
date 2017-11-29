@@ -8,19 +8,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= analytics_init if Rails.env.production? %>
   </head>
 
   <body>
-    <header>
-        <%= breadcrumbs separator: " &rsaquo; " %>
-    </header>
-    <div class="container">
-      <aside class="sidebar">
-        <%= yield(:sidebar) %>
-      </aside>
-      <div class="main skeleton-container">
-        <%= yield %>
+    <div class="wrapper">
+
+      <header>
+          <%= breadcrumbs separator: " &rsaquo; " %>
+      </header>
+      <div class="container">
+        <aside class="sidebar">
+          <%= yield(:sidebar) %>
+        </aside>
+        <div class="main skeleton-container">
+          <%= yield %>
+        </div>
       </div>
-    </div
+
+    </div>
   </body>
 </html>
