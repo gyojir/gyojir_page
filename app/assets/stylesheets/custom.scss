@@ -21,7 +21,7 @@ table.article_list {
 }
 
 img.thumbnail {
-	width: 500px;
+	width: 100px;
 }
 
 p.resizeimage{
@@ -29,6 +29,26 @@ p.resizeimage{
    min-width: 240px; /* 最小幅 */
 	 img { width: 100%; }
 }
+
+.good-button-on{
+	color: white;
+	background-color: hsl(340, 100%, 80%);
+
+	&:hover{
+		color: white;
+	}
+}
+
+
+.bad-button-on{
+	color: white;
+	background-color: hsl(220, 100%, 80%);
+
+	&:hover{
+		color: white;
+	}
+}
+
 
 header{
 	display: flex;
@@ -56,15 +76,9 @@ nav{
 	flex-direction: row;
 }
 
-
 .sidebar{
-	margin-right: 50px;
+	margin: 50px;
 }
-
-// .main{
-// 	flex: 1;
-// 	order: 2;
-// }
 
 @media screen and (max-width : 768px) { /* デスクトップ用CSS */
 	nav ul{
@@ -72,6 +86,9 @@ nav{
 	}
 	.container{
 		flex-direction: column;
+	}
+	.sidebar{
+		margin-top: 0;
 	}
 
 	img.thumbnail {
