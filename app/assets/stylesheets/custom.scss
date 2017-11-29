@@ -24,6 +24,12 @@ img.thumbnail {
 	width: 500px;
 }
 
+p.resizeimage{
+   max-width: 480px; /* 最大幅 */
+   min-width: 240px; /* 最小幅 */
+	 img { width: 100%; }
+}
+
 header{
 	display: flex;
 	padding: 1em;
@@ -66,5 +72,9 @@ nav{
 	}
 	.container{
 		flex-direction: column;
+	}
+
+	img.thumbnail {
+		width: 100%;
 	}
 }
