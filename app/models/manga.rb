@@ -10,8 +10,8 @@ class Manga < ApplicationRecord
     '古い順' => 'created_at asc'
   }
 
-  # 漫画に対してuser_idが既にvoteしているか
-  def vote_user(user_id)
-    votes.find_by(user_id: user_id, manga_id: self.id)
+  # user_idが漫画に対して既にしているvote
+  def user_vote(user_id)
+    votes.find_by(user_id: user_id)
   end
 end
