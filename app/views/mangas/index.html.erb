@@ -20,7 +20,9 @@
     </p>
 
     <% if manga.image? %>
-      <%= image_tag manga.image.url, class: 'thumbnail' %><br/>
+      <p class="resizeimage">
+        <%= image_tag manga.image.url %><br/>
+      </p>
     <% end %>
 
     <p><%= manga.comment %></p>

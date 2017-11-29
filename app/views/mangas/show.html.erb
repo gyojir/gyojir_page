@@ -10,6 +10,13 @@
 </p>
 
 <% if @manga.image? %>
-  <%= image_tag @manga.image.url, class: 'thumbnail' %>
+  <p class="resizeimage">
+    <%= image_tag @manga.image.url %>
+  </p>
 <% end %>
+
+<div class="like-buttons-<%= @manga.id %>" style="display:inline-flex">
+  <%= render partial: 'votes/vote', locals: { manga: @manga }  %>
+</div>
+
 <p><%= @manga.comment %></p>
