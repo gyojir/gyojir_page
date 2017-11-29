@@ -1,22 +1,4 @@
 <% provide(:title, @manga.title) %>
 <% breadcrumb @manga %>
 
-
-<h1><%= @manga.title %></h1>
-<p>
-  <%= @manga.created_at.to_date.to_s %>
-  &emsp;tags:&nbsp;
-  <%= @manga.tags.map{|tag| tag.name}.join(", ") %>
-</p>
-
-<% if @manga.image? %>
-  <p class="resizeimage">
-    <%= image_tag @manga.image.url %>
-  </p>
-<% end %>
-
-<div class="like-buttons-<%= @manga.id %>" style="display:inline-flex">
-  <%= render partial: 'votes/vote', locals: { manga: @manga }  %>
-</div>
-
-<p><%= @manga.comment %></p>
+<%= render @manga %>
