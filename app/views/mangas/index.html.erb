@@ -8,30 +8,6 @@
   <%= submit_tag "検索", name: nil%>
 <% end %>
 
-
-<% @mangas.each do |manga| %>
-  <article>
-
-    <h1><%= link_to manga.title, manga_path(manga) %></h1>
-    <p>
-      <%= manga.created_at.to_date.to_s %>
-      &emsp;tags:&nbsp;
-      <%= manga.tags.map{|tag| tag.name}.join(", ") %>
-    </p>
-
-    <% if manga.image? %>
-      <p class="resizeimage">
-        <%= image_tag manga.image.url %><br/>
-      </p>
-    <% end %>
-
-    <p><%= manga.comment %></p>
-
-    <div class="like-buttons-<%= manga.id %>" style="display:inline-flex">
-      <%= render partial: 'votes/vote', locals: { manga: manga }  %>
-    </div>
-
-  </article>
-<% end %>
+<%= render @mangas %>
 
 <%= will_paginate @mangas %>
