@@ -21,5 +21,50 @@ table.article_list {
 }
 
 img.thumbnail {
-	width: 200px;
+	width: 500px;
+}
+
+header{
+	display: flex;
+	padding: 1em;
+	align-items: center;
+}
+
+nav{
+	display: flex;
+
+	ul {
+		display: flex;
+		flex-direction: column;
+	  list-style:none;
+	}
+
+	a{
+		display: block;
+		padding: 10px;
+		font-size: 22px;
+	}
+}
+.container{
+	display: flex;
+	flex-direction: row;
+}
+
+
+.sidebar{
+	margin-right: 50px;
+}
+
+// .main{
+// 	flex: 1;
+// 	order: 2;
+// }
+
+@media screen and (max-width : 768px) { /* デスクトップ用CSS */
+	nav ul{
+		flex-direction: row;
+	}
+	.container{
+		flex-direction: column;
+	}
 }
