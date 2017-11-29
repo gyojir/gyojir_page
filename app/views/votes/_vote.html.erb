@@ -2,24 +2,28 @@
 <% bad = "bad: #{manga.bad}" %>
 <% vote = manga.user_vote(current_user.id) %>
 
-<% if vote && vote.vote_type == 1 %>
-  <!-- goodが押されている -->
-  <%= button_to manga_vote_path(manga, vote), method: :delete, remote: true, data: { disable_with: good}, class: 'good-button-on' do %>
-      <%= good %>
-  <% end %>
-<% else %>
-  <%= button_to good_manga_votes_path(manga), remote: true, data: { disable_with: good }, class: 'button-off' do %>
-      <%= good %>
-  <% end %>
-<% end %>
+<div style="display:inline-flex">
 
-<% if vote && vote.vote_type == 2 %>
-  <!-- badが押されている -->
-  <%= button_to manga_vote_path(manga, vote), method: :delete, remote: true, data: { disable_with: bad}, class: 'bad-button-on' do %>
-      <%= bad %>
+  <% if vote && vote.vote_type == 1 %>
+    <!-- goodが押されている -->
+    <%= button_to manga_vote_path(manga, vote), method: :delete, remote: true, data: { disable_with: good}, class: 'good-button-on' do %>
+        <%= good %>
+    <% end %>
+  <% else %>
+    <%= button_to good_manga_votes_path(manga), remote: true, data: { disable_with: good }, class: 'button-off' do %>
+        <%= good %>
+    <% end %>
   <% end %>
-<% else %>
-  <%= button_to bad_manga_votes_path(manga), remote: true, data: { disable_with: bad }, class: 'button-off' do %>
-      <%= bad %>
+
+  <% if vote && vote.vote_type == 2 %>
+    <!-- badが押されている -->
+    <%= button_to manga_vote_path(manga, vote), method: :delete, remote: true, data: { disable_with: bad}, class: 'bad-button-on' do %>
+        <%= bad %>
+    <% end %>
+  <% else %>
+    <%= button_to bad_manga_votes_path(manga), remote: true, data: { disable_with: bad }, class: 'button-off' do %>
+        <%= bad %>
+    <% end %>
   <% end %>
-<% end %>
+
+</div>
