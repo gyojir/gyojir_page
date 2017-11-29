@@ -50,6 +50,7 @@ gem 'counter_culture'
 group :production do
   gem 'cloudinary'
   gem 'pg'
+  gem 'google-analytics-rails'
 end
 
 group :development, :test do

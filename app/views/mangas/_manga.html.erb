@@ -8,13 +8,13 @@
 
   <% if manga.image? %>
     <p class="resizeimage">
-      <%= image_tag manga.image.url %><br/>
+      <%= image_tag manga.image.url %>
     </p>
   <% end %>
 
   <p><%= manga.comment %></p>
 
-  <div class="like-buttons-<%= manga.id %>" style="display:inline-flex">
+  <div class="like-buttons-<%= manga.id %>">
     <%= render partial: 'votes/vote', locals: { manga: manga }  %>
   </div>
 </article>

@@ -1,3 +1,64 @@
+html, body {
+	height:100%;
+}
+
+.container{
+	display: flex;
+	flex-direction: row;
+
+	min-height:90%;
+	background-color: white;
+}
+
+.sidebar{
+	margin: 10px;
+	padding: 40px 40px 0 20px;
+}
+
+.main{}
+
+header{
+	display: flex;
+	padding: 1em;
+	align-items: center;
+}
+
+nav{
+	ul {
+		display: flex;
+		flex-direction: column;
+	  list-style:none;
+	}
+
+	a{
+		display: block;
+		padding: 0 10px;
+		font-size: 22px;
+	}
+}
+
+@media screen and (max-width : 768px) { /* デスクトップ用CSS */
+	nav ul{
+		flex-direction: row;
+
+		li{
+			margin-bottom: 0;
+		}
+	}
+	.container{
+		flex-direction: column;
+	}
+	.sidebar{
+		margin: 0 auto 0 30px;
+		padding: 10px;
+	}
+
+	img.thumbnail {
+		width: 100%;
+	}
+}
+
+
 table.article_list {
 	border-collapse: collapse;
 	text-align: left;
@@ -49,49 +110,8 @@ p.resizeimage{
 	}
 }
 
-
-header{
-	display: flex;
-	padding: 1em;
-	align-items: center;
-}
-
-nav{
-	display: flex;
-
-	ul {
-		display: flex;
-		flex-direction: column;
-	  list-style:none;
-	}
-
-	a{
-		display: block;
-		padding: 0 10px;
-		font-size: 22px;
-	}
-}
-.container{
-	display: flex;
-	flex-direction: row;
-}
-
-.sidebar{
-	margin: 50px 50px 0;
-}
-
-@media screen and (max-width : 768px) { /* デスクトップ用CSS */
-	nav ul{
-		flex-direction: row;
-	}
-	.container{
-		flex-direction: column;
-	}
-	.sidebar{
-		margin: 0 auto 0 30px;
-	}
-
-	img.thumbnail {
-		width: 100%;
-	}
+.center{
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
 }

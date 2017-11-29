@@ -84,6 +84,7 @@ GEM
     ffi (1.9.18)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    google-analytics-rails (1.1.1)
     gretel (3.0.9)
       rails (>= 3.1.0)
     http-cookie (1.0.3)
@@ -224,6 +225,7 @@ DEPENDENCIES
   cloudinary
   coffee-rails (~> 4.2)
   counter_culture
+  google-analytics-rails
   gretel
   jbuilder (~> 2.5)
   jquery-rails
