@@ -1,7 +1,7 @@
-<% provide(:title, "漫画") %>
+<% provide(:title, "4コマ漫画") %>
 <% breadcrumb :mangas %>
 
-<h1>漫画</h1>
+<h1>4コマ漫画</h1>
 
 <%= form_tag({action: :index}, {:method=>"get"}) do %>
   <%= select_tag :order, options_for_select(::Manga::ORDERS.keys, selected: params[:order]) %>
