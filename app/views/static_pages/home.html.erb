@@ -1,7 +1,10 @@
 <% breadcrumb :root %>
 
-<h1>Gyojir's Page</h1>
-<p>ようこそ！</p>
+<% content_for :header do %>
+  <div class="title">
+    <h1>Gyojir's Page</h1>
+  </div>
+<% end %>
 
 <% content_for :sidebar do %>
   <nav>
@@ -12,3 +15,6 @@
     </ul>
   </nav>
 <% end %>
+
+<h3>ようこそ！</h3>
+<p>4コマ漫画とかあるから見てってちょ</p>

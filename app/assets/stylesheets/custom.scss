@@ -2,31 +2,50 @@ html, body {
 	height:100%;
 }
 
+.wrapper{
+	min-height:100%;
+	background-color: hsl(100, 10%, 80%);
+}
+
+.title{
+	text-align: center;
+}
+
 .container{
+	border-radius: 5px;
 	display: flex;
 	flex-direction: row;
-
-	min-height:90%;
+	margin: 10px;
+	padding: 10px;
+	min-height: 80vh;
 	background-color: white;
 }
 
 .sidebar{
 	margin: 10px;
-	padding: 40px 40px 0 20px;
+	padding: 0 40px 0 20px;
 }
 
 .main{}
 
 header{
 	display: flex;
-	padding: 1em;
+	padding: 10px;
 	align-items: center;
+	h1{
+		margin: 0 !important;
+	}
+}
+
+.footer{
+	text-align: center;
+	p{
+		margin: 0 !important;
+	}
 }
 
 nav{
 	ul {
-		display: flex;
-		flex-direction: column;
 	  list-style:none;
 	}
 
@@ -37,27 +56,17 @@ nav{
 	}
 }
 
-@media screen and (max-width : 768px) { /* デスクトップ用CSS */
-	nav ul{
-		flex-direction: row;
-
-		li{
-			margin-bottom: 0;
-		}
-	}
+@media screen and (max-width : 768px) { /* スマホ用CSS */
 	.container{
 		flex-direction: column;
 	}
 	.sidebar{
-		margin: 0 auto 0 30px;
+		margin: 0 auto 0 10px;
 		padding: 10px;
+		order: 2;
 	}
 
-	img.thumbnail {
-		width: 100%;
-	}
 }
-
 
 table.article_list {
 	border-collapse: collapse;
