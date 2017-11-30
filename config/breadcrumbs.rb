@@ -15,7 +15,7 @@ end
 
 
 crumb :mangas do
-  link "漫画", mangas_path
+  link "4コマ漫画", mangas_path
 
   parent :root
 end

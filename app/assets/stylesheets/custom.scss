@@ -15,18 +15,25 @@ html, body {
 	border-radius: 5px;
 	display: flex;
 	flex-direction: row;
-	margin: 10px;
+	margin: auto;
 	padding: 10px;
 	min-height: 80vh;
+	width: 80%;
 	background-color: white;
 }
 
 .sidebar{
+	flex: 0 150px; // 拡大縮小なし、幅150px
 	margin: 10px;
-	padding: 0 40px 0 20px;
+	padding: 10px;
 }
 
 .main{}
+
+.breadcrumbs{
+	width: 80%;
+	margin: auto;
+}
 
 header{
 	display: flex;
@@ -44,6 +51,13 @@ header{
 	}
 }
 
+article{
+	margin-top: 20px;
+	border-bottom: solid;
+	border-width: thin;
+	border-color: gray;
+}
+
 nav{
 	ul {
 	  list-style:none;
@@ -58,6 +72,7 @@ nav{
 
 @media screen and (max-width : 768px) { /* スマホ用CSS */
 	.container{
+		width: 90%;
 		flex-direction: column;
 	}
 	.sidebar{
@@ -66,6 +81,9 @@ nav{
 		order: 2;
 	}
 
+	.breadcrumbs{
+		width: 90%;
+	}
 }
 
 table.article_list {
