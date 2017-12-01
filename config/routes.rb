@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   get '/about', to: 'static_pages#about'
   get '/contact', to: 'static_pages#contact'
+  get '/link', to: 'static_pages#link'
 
   resources :mangas do
     resources :votes, only: [:create, :destroy] do
