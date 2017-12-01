@@ -4,25 +4,25 @@ end
 
 crumb :about do
   link "About", about_path
-
   parent :root
 end
 crumb :contact do
   link "Contact", contact_path
-
+  parent :root
+end
+crumb :link do
+  link "Link", link_path
   parent :root
 end
 
 
 crumb :mangas do
   link "4コマ漫画", mangas_path
-
   parent :root
 end
 
 crumb :manga do |manga|
   link manga.title, manga
-
   parent :mangas
 end
 
