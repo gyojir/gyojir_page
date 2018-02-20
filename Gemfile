@@ -47,6 +47,9 @@ gem 'will_paginate', '~> 3.1.0'
 
 gem 'counter_culture'
 
+gem 'bootstrap-sass'
+gem 'will_paginate-bootstrap'
+
 group :production do
   gem 'cloudinary'
   gem 'pg'

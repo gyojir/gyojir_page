@@ -1,7 +1,7 @@
 require 'will_paginate/array'
 class Admin::MangasController < Admin::Base
   def index
-    @mangas = Manga.paginate(page: params[:page])
+    @mangas = Manga.order(::Manga::ORDERS["新しい順"]).paginate(page: params[:page])
     #@mangas = Manga.all
   end
 
