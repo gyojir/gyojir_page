@@ -16,7 +16,7 @@ html, body {
 	display: flex;
 	flex-direction: row;
 	margin: auto;
-	padding: 10px;
+	padding: 10px 0px;
 	min-height: 80vh;
 	width: 80%;
 	background-color: white;
@@ -72,7 +72,7 @@ nav{
 
 @media screen and (max-width : 768px) { /* スマホ用CSS */
 	.container{
-		width: 90%;
+		width: 97%;
 		flex-direction: column;
 	}
 	.sidebar{
