@@ -118,23 +118,33 @@ p.resizeimage{
 	 img { width: 100%; }
 }
 
-.good-button-on{
-	color: white;
-	background-color: hsl(340, 100%, 80%);
+.vote-button{
+  width: 120px;
 
-	&:hover{
-		color: white;
+	&:disabled{
+		opacity: 0.6;
 	}
 }
 
+.button-off{
+	@extend .vote-button;
+
+	color: black;
+	background-color: rgba(0,0,0,0);
+}
+
+.good-button-on{
+	@extend .vote-button;
+
+	color: white;
+	background-color: hsl(340, 100%, 80%);
+}
 
 .bad-button-on{
+	@extend .vote-button;
+
 	color: white;
 	background-color: hsl(220, 100%, 80%);
-
-	&:hover{
-		color: white;
-	}
 }
 
 .center{
