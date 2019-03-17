@@ -47,7 +47,7 @@ gem 'will_paginate', '~> 3.1.0'
 
 gem 'counter_culture'
 
-gem 'bootstrap-sass'
+gem "bootstrap-sass", ">= 3.4.1"
 gem 'will_paginate-bootstrap'
 
 group :production do
