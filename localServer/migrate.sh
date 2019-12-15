@@ -1,0 +1,1 @@
+eval "docker-compose exec app bundle exec rails db:migrate"
