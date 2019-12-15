@@ -1,0 +1,20 @@
+<article>
+  <h2><%= link_to manga.title, manga_path(manga) %></h2>
+  <p>
+    <%= manga.created_at.to_date.to_s %>
+    &emsp;tags:&nbsp;
+    <%= manga.tags.map{|tag| tag.name}.join(", ") %>
+  </p>
+
+  <% if manga.image? %>
+    <p class="resizeimage">
+      <%= image_tag manga.image.url %>
+    </p>
+  <% end %>
+
+  <p><%= simple_format(manga.comment) %></p>
+
+  <div class="like-buttons-<%= manga.id %>">
+    <%= render partial: 'votes/vote', locals: { manga: manga }  %>
+  </div>
+</article>
