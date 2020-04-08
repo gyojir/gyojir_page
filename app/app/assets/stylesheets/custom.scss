@@ -2,6 +2,10 @@ html, body {
 	height:100%;
 }
 
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
 .wrapper{
 	display: flex;
 	flex-direction: column;
@@ -18,7 +22,7 @@ html, body {
 	display: flex;
 	flex-direction: row;
 	margin: auto;
-	padding: 10px 0px;
+	padding: 2rem;
 	min-height: 80vh;
 	width: 80%;
 	background-color: white;
@@ -30,7 +34,9 @@ html, body {
 	padding: 10px;
 }
 
-.main{}
+.main{
+	width: 100%;
+}
 
 .breadcrumbs{
 	width: 80%;
@@ -76,10 +82,21 @@ nav{
 	}
 }
 
+.centerize-wrapper {
+	display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centerize-contents {
+	margin: 0 auto;
+}
+
 @media screen and (max-width : 768px) { /* スマホ用CSS */
 	.container{
 		width: 97%;
 		flex-direction: column;
+		padding: 2rem 0.5rem;
 	}
 	.sidebar{
 		margin: 0 auto 0 10px;

@@ -3,11 +3,15 @@
 
 <h1>4コマ漫画</h1>
 
-<%= form_tag({action: :index}, {:method=>"get"}) do %>
-  <%= select_tag :order, options_for_select(::Manga::ORDERS.keys, selected: params[:order]) %>
-  <%= submit_tag "検索", name: nil%>
-<% end %>
+<div class="centerize-wrapper">
+  <div class="centerize-contents">
+    <%= form_tag({action: :index}, {:method=>"get"}) do %>
+      <%= select_tag :order, options_for_select(::Manga::ORDERS.keys, selected: params[:order]) %>
+      <%= submit_tag "検索", name: nil%>
+    <% end %>
 
-<%= render @mangas %>
+    <%= render @mangas %>
 
-<%= will_paginate @mangas, renderer: BootstrapPagination::Rails  %>
+    <%= will_paginate @mangas, renderer: BootstrapPagination::Rails  %>
+  </div>
+</div>
