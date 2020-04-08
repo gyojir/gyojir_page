@@ -1,3 +1,9 @@
 // Place all the styles related to the mangas controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.manga-comment {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 30em;
+}

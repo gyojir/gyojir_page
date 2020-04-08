@@ -12,7 +12,7 @@
     </p>
   <% end %>
 
-  <p><%= simple_format(manga.comment) %></p>
+  <div class="manga-comment"><%= simple_format(manga.comment) %></div>
 
   <div class="like-buttons-<%= manga.id %>">
     <%= render partial: 'votes/vote', locals: { manga: manga }  %>
